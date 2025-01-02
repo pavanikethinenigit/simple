@@ -6,73 +6,99 @@
     <title>Topic Boxes</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            min-height: 100vh; /* Center the content vertically */
         }
 
         .container {
-            display: flex;
-            justify-content: space-evenly;  
-            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns in the first row */
+            gap: 20px; /* Space between boxes */
+            padding: 20px;
         }
 
         .box {
-            width: 300px;  
-            height: 150px; 
-            padding: 20px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-color: white;
+            border: 2px solid red;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 0 10px;  
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px; /* Reduced box width */
         }
 
         .box h2 {
-            margin-bottom: 10px;
-            color: red; 
+            background-color: red;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         .box p {
-            text-align: center;
-            font-size: 14px;
+            margin: 10px 0 0;
         }
 
-        .box-1 {
-            background: linear-gradient(to right, #66ff66, #ffcc00);
+        .middle {
+            grid-column: span 3; /* Center ReactJS and Angular in the second row */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .box-2 {
-            background: linear-gradient(to right, #ff3399, #ffcc00);
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+            }
+
+            .middle {
+                grid-column: span 2; /* Adjust centering for smaller screens */
+            }
         }
 
-        .box-3 {
-            background: linear-gradient(to right, #000000, #003366);
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr; /* 1 column for very small screens */
+            }
+
+            .middle {
+                flex-direction: column; /* Stack ReactJS and Angular vertically */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box box-1">
+        <!-- First Row -->
+        <div class="box">
             <h2>HTML</h2>
-            <p>HTML stands for HyperText Markup Language. It is used to structure content on the web. HTML defines the layout of web pages using elements such as headings, paragraphs, and links. It uses tags to mark the beginning and end of elements. HTML is the backbone of any website and provides the structure for other technologies to build on.</p>
+            <p>HTML stands for HyperText Markup Language. It structures the content on web pages. HTML defines elements like headings, paragraphs, and links. It is essential for creating the skeleton of a webpage.</p>
         </div>
-
-        <div class="box box-2">
+        <div class="box">
             <h2>CSS</h2>
-            <p>CSS stands for Cascading Style Sheets. It is used for styling the layout and appearance of web pages. CSS allows you to apply colors, fonts, spacing, and positioning to HTML elements. With CSS, you can create responsive designs, animations, and transitions. It is an essential tool for web developers to create visually appealing websites.</p>
+            <p>CSS stands for Cascading Style Sheets. It is used to style the layout and appearance of web pages. CSS enables responsive designs and animation effects. It is key to making a website visually appealing.</p>
+        </div>
+        <div class="box">
+            <h2>JavaScript</h2>
+            <p>JavaScript adds interactivity to web pages. It enables dynamic content such as form validation and animations. It runs on the client side, communicating with web servers. JavaScript powers interactive web applications.</p>
         </div>
 
-        <div class="box box-3">
-            <h2>JavaScript</h2>
-            <p>JavaScript is a programming language used to add interactivity to web pages. It enables dynamic behavior such as form validation, animations, and event handling. JavaScript runs on the client side and can communicate with web servers. It is essential for creating interactive and responsive user experiences on the web.</p>
+        <!-- Second Row -->
+        <div class="middle">
+            <div class="box">
+                <h2>ReactJS</h2>
+                <p>ReactJS is a JavaScript library for building user interfaces. It allows developers to create reusable UI components. React uses a virtual DOM for faster updates. It is widely used for building dynamic single-page applications.</p>
+            </div>
+            <div class="box">
+                <h2>Angular</h2>
+                <p>Angular is a TypeScript-based web application framework. It is used for building single-page applications with a modular approach. Angular provides powerful tools like dependency injection and routing. It is maintained by Google.</p>
+            </div>
         </div>
     </div>
 </body>
