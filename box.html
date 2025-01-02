@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Boxes</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;  
+            width: 70%;
+        }
+
+        .box {
+            width: 300px;  
+            height: 150px; 
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;  
+        }
+
+        .box h2 {
+            margin-bottom: 10px;
+            color: red; 
+        }
+
+        .box p {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .box-1 {
+            background: linear-gradient(to right, #66ff66, #ffcc00);
+        }
+
+        .box-2 {
+            background: linear-gradient(to right, #ff3399, #ffcc00);
+        }
+
+        .box-3 {
+            background: linear-gradient(to right, #000000, #003366);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box-1">
+            <h2>HTML</h2>
+            <p>HTML stands for HyperText Markup Language. It is used to structure content on the web. HTML defines the layout of web pages using elements such as headings, paragraphs, and links. It uses tags to mark the beginning and end of elements. HTML is the backbone of any website and provides the structure for other technologies to build on.</p>
+        </div>
+
+        <div class="box box-2">
+            <h2>CSS</h2>
+            <p>CSS stands for Cascading Style Sheets. It is used for styling the layout and appearance of web pages. CSS allows you to apply colors, fonts, spacing, and positioning to HTML elements. With CSS, you can create responsive designs, animations, and transitions. It is an essential tool for web developers to create visually appealing websites.</p>
+        </div>
+
+        <div class="box box-3">
+            <h2>JavaScript</h2>
+            <p>JavaScript is a programming language used to add interactivity to web pages. It enables dynamic behavior such as form validation, animations, and event handling. JavaScript runs on the client side and can communicate with web servers. It is essential for creating interactive and responsive user experiences on the web.</p>
+        </div>
+    </div>
+</body>
+</html>
